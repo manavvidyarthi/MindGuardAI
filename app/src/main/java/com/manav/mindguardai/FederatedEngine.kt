@@ -97,9 +97,11 @@ internal object FederatedEngine {
 
     private val simulated: List<Client> by lazy {
         listOf(
-            synth("hostel", "Hostel student", "Exams, late nights", 11L, 48, 0.35, -1, 0),
-            synth("nurse", "Night-shift nurse", "Irregular sleep", 23L, 36, 0.15, -2, 0),
-            synth("calm", "Calm routine", "Regular sleep", 37L, 40, -0.45, 1, 1)
+            // Three demo users with different (synthetic) habits, so the data is not identical:
+            // User 1 sleeps a bit less, User 2 much less, User 3 sleeps well and is calmer.
+            synth("user1", "User 1", "Demo data", 11L, 48, 0.35, -1, 0),
+            synth("user2", "User 2", "Demo data", 23L, 36, 0.15, -2, 0),
+            synth("user3", "User 3", "Demo data", 37L, 40, -0.45, 1, 1)
         )
     }
 
