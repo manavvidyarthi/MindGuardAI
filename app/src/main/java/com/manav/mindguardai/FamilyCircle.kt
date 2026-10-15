@@ -38,7 +38,8 @@ import kotlin.coroutines.resumeWithException
  */
 
 /** Firebase console -> Authentication -> Sign-in method -> Google -> Web SDK configuration -> Web client ID */
-internal const val WEB_CLIENT_ID = "PASTE_WEB_CLIENT_ID.apps.googleusercontent.com"
+internal const val WEB_CLIENT_ID =
+    "778610427008-tpf03dh3su1b2dscjlliu4fju1vrtg7b.apps.googleusercontent.com"
 
 internal data class Account(val uid: String, val name: String, val email: String)
 
@@ -111,7 +112,7 @@ internal data class FamilyState(
 internal fun friendlySignInError(e: Exception): String = when {
     e is GetCredentialCancellationException -> "Sign-in cancelled."
     e is NoCredentialException ->
-        "No Google account found on this phone. Add one in Settings → Accounts, then try again."
+        "No Google account found on this phone. Add one in Settings > Accounts, then try again."
     WEB_CLIENT_ID.startsWith("PASTE") ->
         "Google sign-in isn't set up yet: the Web client ID is missing in FamilyCircle.kt."
     (e.message ?: "").contains("10:") || (e.message ?: "").contains("DEVELOPER_ERROR") ->
